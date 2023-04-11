@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url';
 import dbConnection from './DB/index.js';
 import { register } from './controllers/auth.js';
 import authRoutes from './routes/auth.js';
+import postRoutes from './routes/post.js';
 import userRoutes from './routes/user.js';
 
 
@@ -55,6 +56,7 @@ app.post('/auth/register', upload.single('picture'), register);
 
 app.use('/auth', authRoutes);
 app.use('/user',userRoutes);
+app.use('/posts',postRoutes);
 
 dbConnection();
 
